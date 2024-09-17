@@ -20,7 +20,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: list files
-        run: ls
+        run: ls/*
+
+      - name: directory
+        run: pwd
 
       - name: Run a one-line script
         run: echo Hello, world!
