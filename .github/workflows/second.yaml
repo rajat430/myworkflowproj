@@ -1,5 +1,5 @@
 name: "second flow"
-on: [push]
+on: [issues]
 jobs:
   build:
     runs-on: ubuntu-latest
