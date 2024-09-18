@@ -17,7 +17,7 @@ jobs:
       - name: "outtask"
         id: "outtask"
         run: |
-          filename=abcd.txt
+          filename="abcd.txt"
           echo 'filename=${filename}'>> $GITHUB_OUTPUT
 
   out:
