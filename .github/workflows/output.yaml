@@ -16,7 +16,9 @@ jobs:
         run: echo "running deploy"
       - name: "outtask"
         id: "outtask"
-        run: echo 'filename=abcd.txt' >> $GITHUB_OUTPUT
+        run: |
+          filename=abcd.txt
+          echo 'filename=$(filename) >> $GITHUB_OUTPUT
 
   out:
     needs: build
