@@ -18,7 +18,7 @@ jobs:
         id: "outtask"
         run: |
           filename="abcd.txt"
-          echo 'filename=${filename}'>> $GITHUB_OUTPUT
+          echo "filename=${filename}">> $GITHUB_OUTPUT
 
   out:
     needs: build
