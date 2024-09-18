@@ -1,0 +1,25 @@
+name: "output flow"
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      filename: ${{jobs.outtask.outputs.filename}}
+    steps:
+      - name: "checkout code"
+        uses: actions/checkout@v3
+      - name: "lrunning lint"
+        run: echo "running lint"
+      - name: "unit testing"
+        run: echo "running unit testing"
+      - name: "deploy"
+        run: echo "running deploy"
+      - name: "outtask"
+        id: "outtask"
+        run: echo 'finame=abcd.txt' >> $GITHUB_OUTPUT
+
+  out:      
+    runs-on: ubuntu-latest
+    steps:
+      - name: "outtask"
+        run: echo ${{filename}}
