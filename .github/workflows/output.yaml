@@ -18,8 +18,9 @@ jobs:
         id: "outtask"
         run: echo 'filename=abcd.txt' >> $GITHUB_OUTPUT
 
-  out:      
+  out:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: "outtask"
-        run: echo ${{filename}}
+        run: echo "${{needs.build.outputs.filename}}""
