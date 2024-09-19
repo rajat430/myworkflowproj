@@ -1,0 +1,10 @@
+name: env-flow
+on: [push]
+jobs:
+  outenv:
+    env:
+      connectionstring: "mysql.windows.database.com"
+    runs-on: ubuntu-latest
+    steps:
+      - name: outenv
+        run: echo "printing database endpoint ${{env.connectionstring}}"
