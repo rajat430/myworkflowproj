@@ -4,7 +4,7 @@ jobs:
   outenv:
     env:
       connectionstring: "mysql.windows.database.com"
-      password:  ${{secret.password}}
+      password:  ${{secrets.password}}
     runs-on: ubuntu-latest
     steps:
       - name: outenv
