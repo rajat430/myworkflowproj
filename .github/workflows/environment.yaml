@@ -4,7 +4,10 @@ jobs:
   outenv:
     env:
       connectionstring: "mysql.windows.database.com"
+      password:  ${{secret.password}}
     runs-on: ubuntu-latest
     steps:
       - name: outenv
-        run: echo "printing database endpoint ${{env.connectionstring}}"
+        run: |
+          echo "printing database endpoint ${{env.connectionstring}}"
+          echo "database password ${{env.password}}"
